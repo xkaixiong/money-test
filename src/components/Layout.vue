@@ -17,7 +17,7 @@ export default {
 .nav-wrapper {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 99.7vh;
 }
 .content {
   overflow: auto;

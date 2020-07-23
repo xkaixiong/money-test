@@ -1,20 +1,62 @@
 import Layout from '@/components/Layout.vue';
 
 <template>
-  <div>
-    <Layout>Money.vue</Layout>
-  </div>
+    <div>
+        <Layout>
+            <div class="tags">
+                <ul class="current">
+                    <li>衣</li>
+                    <li>食</li>
+                    <li>住</li>
+                    <li>行</li>
+                </ul>
+                <div class="new">
+                    <button>新增标签</button>
+                </div>
+            </div>
+            <div>
+                <label class="notes">
+                    <span class="name">备注</span>
+                    <input type="text">
+                </label>
+            </div>
+            <div>
+                <ul class="moneytypes">
+                    <li class="selected">支出</li>
+                    <li>收入</li>
+                </ul>
+            </div>
+            <div class="numberboard">
+                <div class="output">100</div>
+                <div class="buttons">
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>+</button>
+                    <button>del</button>
+                    <button>4</button>
+                    <button>5</button>
+                    <button>6</button>
+                    <button>-</button>
+                    <button>clr</button>
+                    <button>7</button>
+                    <button>8</button>
+                    <button>9</button>
+                    <button>*</button>
+                    <button>ok</button>
+                    <button>0</button>
+                    <button>.</button>
+                    <button>%</button>
+                    <button>/</button>
+                </div>
+            </div>
+            Money.vue
+        </Layout>
+    </div>
 </template>
 
 <script lang="ts">
-export default {
-  name: "Money"
-};
-</script>
-
-<script lang="scss" scoped>
-@import "~@/assets/style/helper.scss";
-p {
-  color: $red;
-}
+  export default {
+    name: 'Money'
+  };
 </script>
