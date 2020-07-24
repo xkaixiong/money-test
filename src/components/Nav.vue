@@ -2,10 +2,10 @@
   <div class="nav">
     <router-link to="/labels" class="item" active-class="selected">
       <Icon name="label" />标签
-    </router-link>|
+    </router-link>
     <router-link to="/money" class="item" active-class="selected">
       <Icon name="money" />记账
-    </router-link>|
+    </router-link>
     <router-link to="/statistics" class="item" active-class="selected">
       <Icon name="chart" />统计
     </router-link>
@@ -19,10 +19,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import "~@/assets/style/helper.scss"
+  @import "~@/assets/style/helper.scss";
 .nav {
+  @extend %outerShadow;
   display: flex;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
   flex-direction: row;
   font-size: 12px;
   > .item {
