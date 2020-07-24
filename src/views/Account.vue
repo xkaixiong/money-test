@@ -3,7 +3,7 @@ import Layout from '@/components/Layout.vue';
 <template>
     <Layout class-prefix="layout">
         <NumberBoard/>
-        <AccountTypes/>
+        <AccountTypes x="hi"/>
         <Notes/>
         <Tags/>
     </Layout>
