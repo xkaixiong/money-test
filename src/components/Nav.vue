@@ -1,5 +1,5 @@
 <template>
-  <div class="nav">
+  <nav>
     <router-link to="/labels" class="item" active-class="selected">
       <Icon name="label" />标签
     </router-link>
@@ -9,7 +9,7 @@
     <router-link to="/statistics" class="item" active-class="selected">
       <Icon name="chart" />统计
     </router-link>
-  </div>
+  </nav>
 </template>
 
 <script lang="ts">
@@ -20,7 +20,7 @@ export default {
 
 <style lang="scss" scoped>
   @import "~@/assets/style/helper.scss";
-.nav {
+nav {
   @extend %outerShadow;
   display: flex;
   flex-direction: row;

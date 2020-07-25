@@ -15,14 +15,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-
-
 .layout-wrapper {
+  border: 1px solid red;
   display: flex;
   flex-direction: column;
   height: 100vh;
-
 }
 .content {
   overflow: auto;

@@ -12,45 +12,21 @@
 </template>
 
 <script lang="ts">
-    import Vue from 'vue'
-    import {Component} from 'vue-property-decorator';
+  import Vue from 'vue';
+  import {Component, Prop} from 'vue-property-decorator';
 
-    @Component({
-      props:{
-        propMessage:String
+  @Component
+  export default class AccountTypes extends Vue {
+    type = '-'; //'-'表示支出，'+'表示收入
+    selectType(type: string) {
+      if (type !== '-' && type !== '+') {
+        throw new Error('type is unknown');
       }
-    })
-    export default class AccountTypes extends Vue {
-      type = '-' //'-'表示支出，'+'表示收入
-      helloMsg = 'Hello,' +this.propsMessage;
-
-      selectType(type: string) {
-        if (type !== '-' && type !== '+') {
-          throw new Error('type is unknown')
-        }
-        this.type = type
-      }
+      this.type = type;
     }
-    // export default {
-    //     name: "AccountTypes",
-    //     props: ['x'],
-    //     data() {
-    //         return {
-    //             type: '-'//-表示支出，+表示收入
-    //         }
-    //     },
-    //     mounted() {
-    //         console.log(this.x)
-    //     },
-    //     methods: {
-    //         selectType(type) {
-    //             if (type !== '-' && type !== '+') {
-    //                 throw new Error('type is unknown')
-    //             }
-    //             this.type = type
-    //         }
-    //     }
-    // }
+
+  }
+
 </script>
 
 <style lang="scss" scoped>
