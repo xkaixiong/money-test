@@ -28,7 +28,9 @@
 
   @Component
   export default class NumberBoard extends Vue {
-    output: string = '0';
+    @Prop() readonly value!:number;
+    output = this.value.toString();
+
     inputContent(event: MouseEvent) {
       const button = (event.target as HTMLButtonElement);
       const input = button.textContent!;
@@ -41,9 +43,7 @@
         }
         return;
       }
-      if (this.output.indexOf('.') >= 0 && input === '.') {
-        return;
-      }
+      if (this.output.indexOf('.') >= 0 && input === '.') {return;}
       this.output += input;
     }
 
@@ -59,7 +59,9 @@
       this.output = '0';
     }
 
-    ok() {}
+    ok() {
+      this.$emit('update:value',this.output);
+    }
   }
 </script>
 
