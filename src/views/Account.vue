@@ -18,24 +18,17 @@ import Layout from '@/components/Layout.vue';
   import Notes from '@/components/Accout/Notes.vue';
   import Tags from '@/components/Accout/Tags.vue';
   import {Component, Watch} from 'vue-property-decorator';
+  import model from '@/model';
 
-  const records: Record[] = JSON.parse(window.localStorage.getItem('records') || '[]');
-
-  type Record = {
-    tags: string[]
-    notes: string
-    type: string
-    amount: number  //数据类型object\string
-    createdAt?: Date //类-构造函数
-  }
+  const records = model.fetch();
 
   @Component({
     components: {Tags, Notes, AccountTypes, NumberBoard},
   })
   export default class Account extends Vue {
     tags = ['衣', '食', '住', '行', '其他'];
-    records: Record[] = records;
-    record: Record = {
+    records: RecordItem[] = records;
+    record: RecordItem = {
       tags: [], notes: '', type: '-', amount: 0
     };
 
@@ -48,14 +41,14 @@ import Layout from '@/components/Layout.vue';
     }
 
     saveRecord() {
-      const record2: Record = JSON.parse(JSON.stringify(this.record));
+      const record2:RecordItem = model.clone(this.record);
       record2.createdAt = new Date();
       this.records.push(record2);
     }
 
     @Watch('records')
     onRecordsChange() {
-      window.localStorage.setItem('records', JSON.stringify(this.records));
+      model.save(this.records);
     }
   }
 </script>
