@@ -5,9 +5,11 @@ import Layout from '@/components/Layout.vue';
         {{record}}
         <NumberBoard :value.sync="record.amount" @submit="saveRecord"/>
         <AccountTypes :value.sync="record.type"/>
-        <Notes field-name="备注"
-               placeholder="在这里输入备注"
-               @update:value="onUpdateNotes"/>
+        <div class="notes">
+            <FormItem field-name="备注"
+                      placeholder="在这里输入备注"
+                      @update:value="onUpdateNotes"/>
+        </div>
         <Tags :data-source.sync="tags" @update:value="onUpdateTags"/>
     </Layout>
 
@@ -17,7 +19,7 @@ import Layout from '@/components/Layout.vue';
   import Vue from 'vue';
   import NumberBoard from '@/components/Accout/NumberBoard.vue';
   import AccountTypes from '@/components/Accout/AccountTypes.vue';
-  import Notes from '@/components/Accout/Notes.vue';
+  import FormItem from '@/components/Accout/FormItem.vue';
   import Tags from '@/components/Accout/Tags.vue';
   import {Component, Watch} from 'vue-property-decorator';
   import recordsModel from '@/models/recordsModel';
@@ -27,7 +29,7 @@ import Layout from '@/components/Layout.vue';
   const tagList = tagListModel.fetch();
 
   @Component({
-    components: {Tags, Notes, AccountTypes, NumberBoard},
+    components: {Tags, FormItem, AccountTypes, NumberBoard},
   })
   export default class Account extends Vue {
     tags = tagList;
@@ -61,5 +63,8 @@ import Layout from '@/components/Layout.vue';
     .layout-content {
         display: flex;
         flex-direction: column-reverse;
+    }
+    .note{
+        padding: 12px 0;
     }
 </style>

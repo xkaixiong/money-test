@@ -14,7 +14,7 @@
         color: #333;
         line-height: 1.5;
         font-family: $font-hei;
-        background: #white;
+        background: #f5f5f5;
     }
 
 
