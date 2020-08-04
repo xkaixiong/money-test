@@ -25,13 +25,12 @@ import Layout from '@/components/Layout.vue';
   import tagListModel from '@/models/tagListModel';
 
   const records = recordsModel.fetch();
-  const tagList = tagListModel.fetch();
 
   @Component({
     components: {Tags, FormItem, AccountTypes, NumberBoard},
   })
   export default class Account extends Vue {
-    tags = tagList;
+    tags = window.tagList;
     records: RecordItem[] = records;
     record: RecordItem = {
       tags: [], notes: '', type: '-', amount: 0
