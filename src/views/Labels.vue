@@ -21,6 +21,7 @@
   import Vue from 'vue';
   import {Component} from 'vue-property-decorator';
   import tagListModel from '@/models/tagListModel';
+  import Button from '@/components/Button.vue';
 
   tagListModel.fetch();
   @Component
@@ -44,7 +45,7 @@
 
 <style lang="scss">
     .tags {
-        background: #white;
+        background: white;
         font-size: 16px;
         padding-left: 16px;
 

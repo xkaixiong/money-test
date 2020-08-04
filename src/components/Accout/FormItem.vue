@@ -8,7 +8,6 @@
                    :placeholder="this.placeholder">
         </label>
     </div>
-
 </template>
 
 <script lang="ts">
@@ -17,10 +16,11 @@
 
   @Component
   export default class FormItem extends Vue {
-   @Prop({default:''}) value!:string ;
+   @Prop({default:''}) readonly value!:string ;
 
     @Prop({required: true}) fieldName!: string;
     @Prop()placeholder?:string;
+
     @Watch('value')
     onValueChanged(value: string) {
       this.$emit('update:value', value);
@@ -34,11 +34,9 @@
         padding-left: 16px;
         display: flex;
         align-items: center;
-
         .name {
             padding-right: 16px;
         }
-
         input {
             height: 40px;
             flex-grow: 1;
@@ -47,5 +45,4 @@
             padding-right: 16px;
         }
     }
-
 </style>

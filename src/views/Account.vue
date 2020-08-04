@@ -2,7 +2,6 @@ import Layout from '@/components/Layout.vue';
 
 <template>
     <Layout class-prefix="layout">
-        {{record}}
         <NumberBoard :value.sync="record.amount" @submit="saveRecord"/>
         <AccountTypes :value.sync="record.type"/>
         <div class="notes">
