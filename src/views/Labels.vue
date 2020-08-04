@@ -24,7 +24,9 @@
   import Button from '@/components/Button.vue';
 
   tagListModel.fetch();
-  @Component
+  @Component({
+    components:{Button}
+  })
   export default class Labels extends Vue {
     tags = tagListModel.data;
 
