@@ -5,14 +5,7 @@ type Tag = {
   id: string;
   name: string;
 }
-type TagListModel = {
-  data: Tag[]
-  fetch: () => Tag[]
-  create: (name: string) => 'success' | 'duplicated' //联合类型
-  update: (id: string, name: string) => 'success' | 'not found' | 'duplicated'
-  remove: (id: string) => boolean
-  save: () => void
-}
+
 const tagListModel: TagListModel = {
   data: [],
   fetch() {
@@ -20,7 +13,6 @@ const tagListModel: TagListModel = {
     return this.data;
   },
   create(name: string) {
-
     const names = this.data.map(item => item.name);
     if (names.indexOf(name) >= 0) {return 'duplicated';}
     const id = createId().toString();

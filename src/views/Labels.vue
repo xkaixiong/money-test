@@ -18,9 +18,9 @@
 </template>
 
 <script lang="ts">
+
 import Vue from 'vue';
 import {Component} from 'vue-property-decorator';
-import tagListModel from '@/models/tagListModel';
 import Button from '@/components/Button.vue';
 
 
@@ -37,8 +37,8 @@ export default class Labels extends Vue {
     }
   }
 }
-
 </script>
+
 <style lang="scss">
 .tags {
   background: white;

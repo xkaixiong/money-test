@@ -20,18 +20,14 @@ import Layout from '@/components/Layout.vue';
   import AccountTypes from '@/components/Accout/AccountTypes.vue';
   import FormItem from '@/components/Accout/FormItem.vue';
   import Tags from '@/components/Accout/Tags.vue';
-  import {Component, Watch} from 'vue-property-decorator';
-  import recordsModel from '@/models/recordsModel';
-  import tagListModel from '@/models/tagListModel';
-
-  const records = recordsModel.fetch();
+  import {Component} from 'vue-property-decorator';
 
   @Component({
     components: {Tags, FormItem, AccountTypes, NumberBoard},
   })
   export default class Account extends Vue {
     tags = window.tagList;
-    records: RecordItem[] = records;
+    records  = window.records;
     record: RecordItem = {
       tags: [], notes: '', type: '-', amount: 0
     };
@@ -45,12 +41,7 @@ import Layout from '@/components/Layout.vue';
     }
 
     saveRecord() {
-      recordsModel.create(this.record);
-    }
-
-    @Watch('records')
-    onRecordsChange() {
-      recordsModel.save();
+      window.createRecord(this.record);
     }
   }
 </script>
