@@ -21,13 +21,14 @@ import Layout from '@/components/Layout.vue';
   import FormItem from '@/components/Accout/FormItem.vue';
   import Tags from '@/components/Accout/Tags.vue';
   import {Component} from 'vue-property-decorator';
+  import store from '@/store/index2';
 
   @Component({
     components: {Tags, FormItem, AccountTypes, NumberBoard},
   })
   export default class Account extends Vue {
-    tags = window.tagList;
-    records  = window.records;
+    tags = store.tagList;
+    records  = store.records;
     record: RecordItem = {
       tags: [], notes: '', type: '-', amount: 0
     };
@@ -41,7 +42,7 @@ import Layout from '@/components/Layout.vue';
     }
 
     saveRecord() {
-      window.createRecord(this.record);
+      store.createRecord(this.record);
     }
   }
 </script>
