@@ -30,14 +30,14 @@ export default class EditLabel extends Vue {
     return this.$store.state.currentTag;
   }
 
-  // created() {
-  //   const id = this.$route.params.id;
-  //   this.$store.commit('fetchTags');
-  //   this.$store.commit('setCurrentTag',id);
-  //   if (!this.currentTag) {
-  //     this.$router.replace('/404');
-  //   }
-  // }
+  created() {
+    const id = this.$route.params.id;
+    this.$store.commit('fetchTags');
+    this.$store.commit('setCurrentTag',id);
+    if (!this.currentTag) {
+      this.$router.replace('/404');
+    }
+  }
 
   update(name: string) {
     if (this.currentTag) {
