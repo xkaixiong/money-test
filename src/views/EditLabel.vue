@@ -30,14 +30,14 @@ export default class EditLabel extends Vue {
     return this.$store.state.currentTag;
   }
 
-  created() {
-    const id = this.$route.params.id;
-    this.$store.commit('fetchTags');
-    this.$store.commit('setCurrentTag',id);
-    if (!this.currentTag) {
-      this.$router.replace('/404');
-    }
-  }
+  // created() {
+  //   const id = this.$route.params.id;
+  //   this.$store.commit('fetchTags');
+  //   this.$store.commit('setCurrentTag',id);
+  //   if (!this.currentTag) {
+  //     this.$router.replace('/404');
+  //   }
+  // }
 
   update(name: string) {
     if (this.currentTag) {
@@ -57,7 +57,6 @@ export default class EditLabel extends Vue {
     this.$router.back();
   }
 }
-
 </script>
 
 <style lang="scss" scoped>
@@ -70,11 +69,8 @@ export default class EditLabel extends Vue {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   > .title {
-
   }
-
   > .leftIcon {
     width: 20px;
     height: 20px;
