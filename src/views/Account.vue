@@ -33,6 +33,7 @@ get records (){
   record: RecordItem = {
     tags: [], notes: '', type: '-', amount: 0
   };
+
   created(){
     this.$store.commit('fetchRecords')
   }
