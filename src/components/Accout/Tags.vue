@@ -22,12 +22,15 @@ import TagHelper from '@/mixins/tagHelper';
 @Component
 export default class Tags extends mixins(TagHelper) {
   selectedTags: string[] = [];
-  get tagList(){
+
+  get tagList() {
     return this.$store.state.tagList;
   }
-  created(){
+
+  created() {
     this.$store.commit('fetchTags');
   }
+
   toggle(tag: string) {
     const index = this.selectedTags.indexOf(tag);
     if (index >= 0) {
@@ -37,9 +40,7 @@ export default class Tags extends mixins(TagHelper) {
     }
     this.$emit('update:value', this.selectedTags);
   }
-
 }
-
 </script>
 
 <style lang="scss" scoped>
