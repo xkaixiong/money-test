@@ -1,7 +1,7 @@
 <template>
     <div>
         <label class="formItem">
-            <span class="name">标签名</span>
+            <span class="name">备注</span>
             <input type="text"
                    :value="value"
                    @input="onValueChanged($event.target.value)  "
