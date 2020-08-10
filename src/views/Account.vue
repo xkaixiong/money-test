@@ -19,14 +19,13 @@ import Layout from '@/components/Layout.vue';
 <script lang="ts">
 import Vue from 'vue';
 import NumberBoard from '@/components/Accout/NumberBoard.vue';
-import AccountTypes from '@/components/Accout/AccountTypes.vue';
 import FormItem from '@/components/Accout/FormItem.vue';
 import Tags from '@/components/Accout/Tags.vue';
 import {Component} from 'vue-property-decorator';
 import recordTypeList from '@/constants/recordTypeList';
 
 @Component({
-  components: {Tags, FormItem, AccountTypes, NumberBoard},
+  components: {Tags, FormItem, NumberBoard},
 })
 
 export default class Account extends Vue {
