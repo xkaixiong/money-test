@@ -3,7 +3,7 @@
     <div class="navBar">
       <Icon class="leftIcon" name="left" @click="goBack"/>
       <span class="title">编辑标签</span>
-      <span class="rightICon"></span>
+      <span class="rightIcon"/>
     </div>
     <div class="form-wrapper">
       <FormItem :value="currentTag.name"
@@ -65,28 +65,24 @@ export default class EditLabel extends Vue {
   font-size: 16px;
   padding: 12px 16px;
   background: white;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   > .title {
   }
   > .leftIcon {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
   }
-
-  > .rightICon {
-    width: 20px;
-    height: 20px;
+  > .rightIcon {
+    width: 24px;
+    height: 24px;
   }
 }
-
 .form-wrapper {
   background: white;
   margin-top: 8px;
 }
-
 .button-wrapper {
   text-align: center;
   padding: 16px;
