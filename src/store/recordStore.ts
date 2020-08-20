@@ -1,22 +1,20 @@
 import clone from '@/lib/clone';
 
-const localStorageKeyName = 'records';
-
+const localStorageKeyName = 'recordList';
 
 const recordStore = {
-  records: [] as RecordItem[],
+  recordList: [] as RecordItem[],
   fetchRecords() {
-    this.records = JSON.parse(window.localStorage.getItem(localStorageKeyName) || '[]') as RecordItem[];
-    return this.records;
+    this.recordList = JSON.parse(window.localStorage.getItem(localStorageKeyName) || '[]') as RecordItem[];
+    return this.recordList;
   },
   saveRecords() {
-    window.localStorage.setItem(localStorageKeyName, JSON.stringify(this.records));
+    window.localStorage.setItem(localStorageKeyName, JSON.stringify(this.recordList));
   },
   createRecord (record: RecordItem) {
     const record2: RecordItem = clone(record);
-    record2.createdAt = new Date();
-    this.records?.push(record2);
-    //可选链语法 ES 2020
+    record2.createdAt = new Date().toISOString();
+    this.recordList && this.recordList.push(record2);
     recordStore.saveRecords();
   },
 };
