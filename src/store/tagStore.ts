@@ -4,9 +4,9 @@ const localStorageKeyName = 'tagList';
 
 const tagStore = {
   tagList: [] as Tag[],
-  fetchTags(){
+  fetchTags() {
     this.tagList = JSON.parse(window.localStorage.getItem(localStorageKeyName) || '[]');
-    return this.tagList
+    return this.tagList;
   },
   findTag(id: string) {
     return this.tagList.filter(t => t.id === id)[0];
