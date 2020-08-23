@@ -7,8 +7,8 @@ import Nav from '@/components/Nav.vue';
 import Layout from '@/components/Layout.vue';
 import Icon from '@/components/Icon.vue';
 
-Vue.config.productionTip = false;
 
+Vue.config.productionTip = false;
 Vue.component('Nav', Nav);
 Vue.component('Layout', Layout);
 Vue.component('Icon', Icon);
@@ -23,7 +23,8 @@ new Vue({
 if (document.documentElement.clientWidth > 500) {
   window.alert('请使用手机打开本页面以保证浏览效果');
   const img = document.createElement('img');
-  img.src = '/public/qrcode.png';
+
+  img.src =  require (`../public/qrcode.png`)
   img.style.position = 'fixed';
   img.style.left = '50%';
   img.style.top = '50%';
